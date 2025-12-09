@@ -1,16 +1,16 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-From the website, https://gssdataexplorer.norc.org/gss_data, I downloaded the data, 2025 Data Files (GSS years 1972-2024), and summarized according to my preferences. 
-The summary1 data contains year, age, sex, polviews, partyid, indus10 columns.
+From the website https://gssdataexplorer.norc.org/gss_data, I downloaded the 2025 Data Files (GSS years 1972–2024) and summarized the variables according to my preferences.
+The PoliticsJob dataset contains the following columns: year, age, sex, polviews, partyid, and indus10.
 
 ``` r
 if(!require(readr)) install.packages("readr")
 library(readr)
 
 github="https://raw.githubusercontent.com/agronomy4future/General-Social-Survey-GSS-/refs/heads/main/General_Social_Survey_GSS_Sumamry1.csv"
-df=data.frame(read_csv(url(github),show_col_types = FALSE))
+PoliticsJob=data.frame(read_csv(url(github),show_col_types = FALSE))
 set.seed(100)
 
-print(df[sample(nrow(df),5),])
+print(df[sample(nrow(PoliticsJob),5),])
         id year age sex polviews partyid indus10
 16607 1138 1986  35   1       NA       4    9080
 15068 1133 1985  18   1        2       4    8680
@@ -28,7 +28,7 @@ print(df[sample(nrow(df),5),])
 if(!require(dplyr)) install.packages("dplyr")
 library(dplyr)
 
-df1= df %>%
+PoliticsJob= PoliticsJob %>%
   mutate(
     sex_lbl = case_when(
       sex == 1 ~ "Male",
@@ -60,5 +60,5 @@ df1= df %>%
     )
   )
 
-to add labels to indus10, please refer to the below website. 
+To add labels to the indus10 variable (Industry and Occupation Code Lists), please refer to the website below:
 https://www.census.gov/topics/employment/industry-occupation/guidance/code-lists.html
