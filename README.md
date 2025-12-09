@@ -60,5 +60,6 @@ PoliticsJob= PoliticsJob %>%
     )
   )
 
-To add labels to the indus10 variable (Industry and Occupation Code Lists), please refer to the website below:
-https://www.census.gov/topics/employment/industry-occupation/guidance/code-lists.html
+# To add labels to the indus10 variable (Industry and Occupation Code Lists),
+# please refer to the website below:
+# https://www.census.gov/topics/employment/industry-occupation/guidance/code-lists.html
